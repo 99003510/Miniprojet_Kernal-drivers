@@ -11,7 +11,7 @@ int main(void)
     sio = fopen("/sys/class/gpio/export", "w");//pin export for LED
     fseek(sio, 0, SEEK_SET);
     fprintf(sio, "%d", 115);
-    fflush(sio);
+    fflush(sio);//clears the output buffer
     fclose(sio);
 
     lio = fopen("/sys/class/gpio/export", "w");//pin export for PIR sensor
